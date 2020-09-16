@@ -41,7 +41,6 @@ class PeopleTable extends React.Component {
             age: ''
         }
         this.setState({ people: peopleCopy, person: emptyPerson })
-        { console.log(this.state.people) };
     }
 
     onClearClick = () => {
@@ -67,7 +66,7 @@ class PeopleTable extends React.Component {
                         <tr><th>First Name</th><th>Last Name</th><th>Age</th></tr>
                     </thead>
                     <tbody>
-                        {this.state.people.forEach(person => <PersonRow person={person} />)}                        
+                        {this.state.people.map((person, i) => <PersonRow person={person} key={i} />)}                                   
                     </tbody>
                 </table>
             </div>);
@@ -76,3 +75,4 @@ class PeopleTable extends React.Component {
 
 export default PeopleTable;
 //{this.state.people.map(person, i => <PersonRow person={person} key={i} />)}
+//{ this.state.people.forEach(person => <PersonRow person={person} />) }             
